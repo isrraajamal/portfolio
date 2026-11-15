@@ -6,14 +6,14 @@
      color     → c1..c6 (thumbnail colour, see style.css)
      live/code → real links (leave "" to hide the button)
      cover     → optional image used as the project thumbnail
-   shots     → screenshots, e.g. ["assets/img/startup-1.jpg", ...]
+   shots     → screenshots, e.g. ["assets/img/startup-1.webp", ...]
                  (leave [] to show styled placeholders)
    All text below is EXAMPLE content — replace with your own.
    ========================================================== */
 window.PROJECTS = [
   {
     slug: 'wayfarer-travel', cat: 'landing', color: 'c1', icon: 'bi-compass',
-    cover: 'assets/img/wayfarer-santorini.jpg',
+    cover: 'assets/img/wayfarer-santorini.webp',
     tag: 'Landing page', title: 'Wayfarer — Travel & Tours',
     summary: 'A cinematic travel booking website with a destination-driven hero slider, trip search, packages, a membership club and an in-app itinerary section.',
     role: 'Design & Front-End Development', year: '2026', duration: '5 weeks',
@@ -27,11 +27,11 @@ window.PROJECTS = [
     ],
     results: ['A hero that makes visitors want to travel', 'A clear path from inspiration to package', 'Trust built with stats, reviews and FAQs'],
     live: '', code: '',
-    shots: ['assets/img/wayfarer-santorini.jpg', 'assets/img/wayfarer-maldives.jpg', 'assets/img/wayfarer-bali.jpg', 'assets/img/wayfarer-lapland.jpg', 'assets/img/wayfarer-full.jpg']
+    shots: ['assets/img/wayfarer-santorini.webp', 'assets/img/wayfarer-maldives.webp', 'assets/img/wayfarer-bali.webp', 'assets/img/wayfarer-lapland.webp', 'assets/img/wayfarer-full.webp']
   },
   {
     slug: 'form-and-wood', cat: 'shop', color: 'c3', icon: 'bi-lamp',
-    cover: 'assets/img/formwood-hero.jpg',
+    cover: 'assets/img/formwood-hero.webp',
     tag: 'E-commerce', title: 'Form & Wood — Furniture Atelier',
     summary: 'A bold, editorial online store for a furniture workshop, with oversized typography, product colour options, a lookbook and bundle shopping.',
     role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
@@ -45,11 +45,11 @@ window.PROJECTS = [
     ],
     results: ['A distinctive, editorial brand identity', 'Products shown in context, not just on white', 'Bundle and slider features that encourage browsing'],
     live: '', code: '',
-    shots: ['assets/img/formwood-hero.jpg', 'assets/img/formwood-departments.jpg', 'assets/img/formwood-drop.jpg', 'assets/img/formwood-lookbook.jpg', 'assets/img/formwood-bundle.jpg', 'assets/img/formwood-philosophy.jpg', 'assets/img/formwood-reviews.jpg', 'assets/img/formwood-mockup.jpg']
+    shots: ['assets/img/formwood-hero.webp', 'assets/img/formwood-departments.webp', 'assets/img/formwood-drop.webp', 'assets/img/formwood-lookbook.webp', 'assets/img/formwood-bundle.webp', 'assets/img/formwood-philosophy.webp', 'assets/img/formwood-reviews.webp', 'assets/img/formwood-mockup.webp']
   },
   {
     slug: 'florista-weddings', cat: 'landing', color: 'c2', icon: 'bi-flower1',
-    cover: 'assets/img/florista-hero1.jpg',
+    cover: 'assets/img/florista-hero1.webp',
     tag: 'Landing page', title: 'Florista — Weddings & Floral Design',
     summary: 'A romantic, editorial website for a wedding planner and florist, with an arched hero slider, services, portfolio, décor gallery and an interactive booking letter.',
     role: 'Design & Front-End Development', year: '2026', duration: '5 weeks',
@@ -63,11 +63,11 @@ window.PROJECTS = [
     ],
     results: ['A romantic, premium brand feel', 'Services, work and process easy to explore', 'A memorable, personal way to enquire'],
     live: '', code: '',
-    shots: ['assets/img/florista-hero1.jpg', 'assets/img/florista-hero2.jpg', 'assets/img/florista-mobile.jpg', 'assets/img/florista-full.jpg']
+    shots: ['assets/img/florista-hero1.webp', 'assets/img/florista-hero2.webp', 'assets/img/florista-mobile.webp', 'assets/img/florista-full.webp']
   },
   {
     slug: 'ravenmoor-fc', cat: 'landing', color: 'c1', icon: 'bi-trophy',
-    cover: 'assets/img/ravenmoor-hero.jpg',
+    cover: 'assets/img/ravenmoor-hero.webp',
     tag: 'Multi-page website', title: 'Ravenmoor FC — Football Club',
     summary: 'A multi-page football club website with a live match centre, fixtures and results, news, squad profiles, standings, video and ticketing.',
     role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
@@ -81,11 +81,11 @@ window.PROJECTS = [
     ],
     results: ['One place for fixtures, scores and stories', 'Consistent look across home and inner pages', 'Clear routes to tickets and membership'],
     live: '', code: '',
-    shots: ['assets/img/ravenmoor-hero.jpg', 'assets/img/ravenmoor-matches.jpg', 'assets/img/ravenmoor-news.jpg', 'assets/img/ravenmoor-about.jpg', 'assets/img/ravenmoor-mobile.jpg', 'assets/img/ravenmoor-full.jpg']
+    shots: ['assets/img/ravenmoor-hero.webp', 'assets/img/ravenmoor-matches.webp', 'assets/img/ravenmoor-news.webp', 'assets/img/ravenmoor-about.webp', 'assets/img/ravenmoor-mobile.webp', 'assets/img/ravenmoor-full.webp']
   },
   {
     slug: 'bagista-handbags', cat: 'shop', color: 'c4', icon: 'bi-handbag',
-    cover: 'assets/img/bagista-hero.jpg',
+    cover: 'assets/img/bagista-hero.webp',
     tag: 'E-commerce', title: 'Bagista — Luxury Handbags',
     summary: 'A refined, bilingual online store for handmade Egyptian leather bags, with elegant script typography and rich editorial imagery.',
     role: 'Design & Front-End Development', year: '2026', duration: '4 weeks',
@@ -99,11 +99,11 @@ window.PROJECTS = [
     ],
     results: ['A luxurious, editorial brand feel', 'Clear path from collections to product', 'Ready for English and Arabic audiences'],
     live: '', code: '',
-    shots: ['assets/img/bagista-hero.jpg', 'assets/img/bagista-full.jpg']
+    shots: ['assets/img/bagista-hero.webp', 'assets/img/bagista-full.webp']
   },
   {
     slug: 'emily-jane-books', cat: 'landing', color: 'c2', icon: 'bi-book',
-    cover: 'assets/img/emilyjane-cover.jpg',
+    cover: 'assets/img/emilyjane-cover.webp',
     tag: 'Landing page', title: 'Emily Jane — Classic Books Library',
     summary: 'A charming, searchable library of free classic love stories, with pastel scalloped sections, a book of the month, reading lists and a monthly read-along.',
     role: 'Design & Front-End Development', year: '2026', duration: '4 weeks',
@@ -118,11 +118,11 @@ window.PROJECTS = [
     ],
     results: ['A warm, memorable brand feel', 'Readers can find a book in seconds', 'A clear path from browsing to reading'],
     live: '', code: '',
-    shots: ['assets/img/emilyjane-hero.jpg', 'assets/img/emilyjane-library.jpg', 'assets/img/emilyjane-contact.jpg', 'assets/img/emilyjane-modal.jpg', 'assets/img/emilyjane-responsive.jpg', 'assets/img/emilyjane-mobile.jpg', 'assets/img/emilyjane-full.jpg']
+    shots: ['assets/img/emilyjane-hero.webp', 'assets/img/emilyjane-library.webp', 'assets/img/emilyjane-contact.webp', 'assets/img/emilyjane-modal.webp', 'assets/img/emilyjane-responsive.webp', 'assets/img/emilyjane-mobile.webp', 'assets/img/emilyjane-full.webp']
   },
   {
     slug: 'healthcare-plus', cat: 'landing', color: 'c1', icon: 'bi-heart-pulse',
-    cover: 'assets/img/healthcare-home.jpg',
+    cover: 'assets/img/healthcare-home.webp',
     tag: 'Multi-page website', title: 'HealthCare Plus — Medical Clinic',
     summary: 'A clean, trustworthy multi-page website for a medical clinic, with an appointment booking bar, department pages, a doctors team, a blog and an FAQ.',
     role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
@@ -136,11 +136,11 @@ window.PROJECTS = [
     ],
     results: ['A calm, trustworthy first impression', 'Appointment booking always one click away', 'Consistent look across 10+ pages and in dark mode'],
     live: '', code: '',
-    shots: ['assets/img/healthcare-home.jpg', 'assets/img/healthcare-services.jpg', 'assets/img/healthcare-team.jpg', 'assets/img/healthcare-mobile.jpg', 'assets/img/healthcare-full.jpg']
+    shots: ['assets/img/healthcare-home.webp', 'assets/img/healthcare-services.webp', 'assets/img/healthcare-team.webp', 'assets/img/healthcare-mobile.webp', 'assets/img/healthcare-full.webp']
   },
   {
     slug: 'little-stage-arts', cat: 'landing', color: 'c4', icon: 'bi-balloon-heart',
-    cover: 'assets/img/littlestage-home.jpg',
+    cover: 'assets/img/littlestage-home.webp',
     tag: 'Landing page', title: 'Little Stage Arts — Nursery',
     summary: 'A warm, hand-illustrated website for an arts-focused nursery, with gentle colour, playful characters and a simple way for parents to book a visit.',
     role: 'Design & Front-End Development', year: '2026', duration: '3 weeks',
@@ -154,11 +154,11 @@ window.PROJECTS = [
     ],
     results: ['A warm, trustworthy first impression', 'Everything parents need on one calm page', 'An easy, friendly route to booking a visit'],
     live: '', code: '',
-    shots: ['assets/img/littlestage-home.jpg', 'assets/img/littlestage-about.jpg', 'assets/img/littlestage-approach.jpg', 'assets/img/littlestage-parents.jpg', 'assets/img/littlestage-mobile.jpg', 'assets/img/littlestage-full.jpg']
+    shots: ['assets/img/littlestage-home.webp', 'assets/img/littlestage-about.webp', 'assets/img/littlestage-approach.webp', 'assets/img/littlestage-parents.webp', 'assets/img/littlestage-mobile.webp', 'assets/img/littlestage-full.webp']
   },
   {
     slug: 'dolce-rose', cat: 'shop', color: 'c2', icon: 'bi-cake2',
-    cover: 'assets/img/dolce-rose-desktop.jpg',
+    cover: 'assets/img/dolce-rose-desktop.webp',
     tag: 'E-commerce', title: 'Dolce Rosé — Patisserie',
     summary: 'A dreamy, rose-gradient website for a boutique bakery, with a menu, product carousel and custom cake orders.',
     role: 'Design & Front-End Development', year: '2025', duration: '3 weeks',
@@ -172,11 +172,11 @@ window.PROJECTS = [
     ],
     results: ['A mouth-watering first impression', 'Menu and products easy to browse', 'Smooth, app-like experience on mobile'],
     live: '', code: '',
-    shots: ['assets/img/dolce-rose-desktop.jpg', 'assets/img/dolce-rose-mobile.jpg', 'assets/img/dolce-rose-full.jpg']
+    shots: ['assets/img/dolce-rose-desktop.webp', 'assets/img/dolce-rose-mobile.webp', 'assets/img/dolce-rose-full.webp']
   },
   {
     slug: 'mrl-architecture', cat: 'portfolio', color: 'c4', icon: 'bi-building',
-    cover: 'assets/img/mrl-hero.jpg',
+    cover: 'assets/img/mrl-hero.webp',
     tag: 'Portfolio', title: 'MR L Production — Architecture Studio',
     summary: 'A cinematic, full-screen portfolio for an architecture and interiors studio, with a glass dashboard of featured work and key numbers.',
     role: 'Design & Front-End Development', year: '2025', duration: '4 weeks',
@@ -190,11 +190,11 @@ window.PROJECTS = [
     ],
     results: ['A premium, cinematic first impression', 'Featured work and credibility visible at once', 'Clear invitation to start a project'],
     live: '', code: '',
-    shots: ['assets/img/mrl-hero.jpg']
+    shots: ['assets/img/mrl-hero.webp']
   },
   {
     slug: 'enola-ceramics', cat: 'landing', color: 'c3', icon: 'bi-cup-hot',
-    cover: 'assets/img/enola-home.jpg',
+    cover: 'assets/img/enola-home.webp',
     tag: 'Multi-page website', title: 'ENOLA — Ceramics Studio',
     summary: 'A calm, editorial multi-page website for a handmade ceramics studio, with a full-screen slider, arch-shaped galleries, masterclass booking and a product catalog.',
     role: 'Design & Front-End Development', year: '2026', duration: '5 weeks',
@@ -209,11 +209,11 @@ window.PROJECTS = [
     ],
     results: ['A calm, premium brand feel', 'Pieces and classes easy to explore and book', 'Consistent look across five pages'],
     live: '', code: '',
-    shots: ['assets/img/enola-home.jpg', 'assets/img/enola-slide.jpg', 'assets/img/enola-pieces.jpg', 'assets/img/enola-mobile.jpg', 'assets/img/enola-full.jpg']
+    shots: ['assets/img/enola-home.webp', 'assets/img/enola-slide.webp', 'assets/img/enola-pieces.webp', 'assets/img/enola-mobile.webp', 'assets/img/enola-full.webp']
   },
   {
     slug: 'kido-kids', cat: 'shop', color: 'c6', icon: 'bi-emoji-smile',
-    cover: 'assets/img/kido-hero.jpg',
+    cover: 'assets/img/kido-hero.webp',
     tag: 'E-commerce', title: 'Kido Kids — Childrenswear',
     summary: 'A bright, playful online store for organic childrenswear, with a photo-led hero, product collections, an exclusive offer countdown and parent reviews.',
     role: 'Design & Front-End Development', year: '2026', duration: '5 weeks',
@@ -227,11 +227,11 @@ window.PROJECTS = [
     ],
     results: ['A warm, joyful brand feel', 'Easy shopping by category and occasion', 'Trust built with reviews, FAQs and support'],
     live: '', code: '',
-    shots: ['assets/img/kido-hero.jpg', 'assets/img/kido-full.jpg']
+    shots: ['assets/img/kido-hero.webp', 'assets/img/kido-full.webp']
   },
   {
     slug: 'petrocore-energy', cat: 'landing', color: 'c5', icon: 'bi-fuel-pump',
-    cover: 'assets/img/petrocore-home.jpg',
+    cover: 'assets/img/petrocore-home.webp',
     tag: 'Multi-page website', title: 'PetroCore — Energy Solutions',
     summary: 'A bold corporate website for an oil and gas engineering company, with cinematic industrial photography, services, a project portfolio, insights and a leadership contact page.',
     role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
@@ -245,11 +245,11 @@ window.PROJECTS = [
     ],
     results: ['A premium, high-trust corporate look', 'Services and projects easy to explore', 'Consistent design across every page'],
     live: '', code: '',
-    shots: ['assets/img/petrocore-home.jpg', 'assets/img/petrocore-services.jpg', 'assets/img/petrocore-projects.jpg', 'assets/img/petrocore-mobile.jpg', 'assets/img/petrocore-full.jpg']
+    shots: ['assets/img/petrocore-home.webp', 'assets/img/petrocore-services.webp', 'assets/img/petrocore-projects.webp', 'assets/img/petrocore-mobile.webp', 'assets/img/petrocore-full.webp']
   },
   {
     slug: 'wash-house', cat: 'shop', color: 'c3', icon: 'bi-droplet-half',
-    cover: 'assets/img/washhouse-hero.jpg',
+    cover: 'assets/img/washhouse-hero.webp',
     tag: 'E-commerce', title: 'Wash House — Natural Soap',
     summary: 'A warm, earthy online store for handmade natural soap, with bold typography, a moving ticker and a playful brand voice.',
     role: 'Design & Front-End Development', year: '2025', duration: '3 weeks',
@@ -263,11 +263,11 @@ window.PROJECTS = [
     ],
     results: ['A distinctive, memorable brand feel', 'Brand values communicated in seconds', 'Clear path from first look to shop'],
     live: '', code: '',
-    shots: ['assets/img/washhouse-hero.jpg']
+    shots: ['assets/img/washhouse-hero.webp']
   },
   {
     slug: 'kidoro-academy', cat: 'landing', color: 'c1', icon: 'bi-palette',
-    cover: 'assets/img/kidoro-home.jpg',
+    cover: 'assets/img/kidoro-home.webp',
     tag: 'Multi-page website', title: 'Kidoro — Creative Kids Academy',
     summary: 'A playful, colourful multi-page website for a children’s art academy, with programs, events, a student gallery and a free-trial booking form.',
     role: 'Design & Front-End Development', year: '2026', duration: '5 weeks',
@@ -282,11 +282,11 @@ window.PROJECTS = [
     ],
     results: ['A joyful, memorable brand for kids and parents', 'Programs, events and the studio easy to explore', 'A clear path to booking a free trial'],
     live: '', code: '',
-    shots: ['assets/img/kidoro-about.jpg', 'assets/img/kidoro-programs.jpg', 'assets/img/kidoro-events.jpg', 'assets/img/kidoro-gallery.jpg', 'assets/img/kidoro-contact.jpg', 'assets/img/kidoro-nav.jpg', 'assets/img/kidoro-full.jpg']
+    shots: ['assets/img/kidoro-about.webp', 'assets/img/kidoro-programs.webp', 'assets/img/kidoro-events.webp', 'assets/img/kidoro-gallery.webp', 'assets/img/kidoro-contact.webp', 'assets/img/kidoro-nav.webp', 'assets/img/kidoro-full.webp']
   },
   {
     slug: 'gamila-hijab', cat: 'shop', color: 'c2', icon: 'bi-bag-heart',
-    cover: 'assets/img/gamila-hero.jpg',
+    cover: 'assets/img/gamila-hero.webp',
     tag: 'E-commerce', title: 'Gamila — Hijab Boutique',
     summary: 'An elegant burgundy-and-rose online boutique for premium hijabs, built around arched imagery and a luxe collection hero.',
     role: 'Design & Front-End Development', year: '2025', duration: '3 weeks',
@@ -300,11 +300,11 @@ window.PROJECTS = [
     ],
     results: ['A premium, memorable brand look', 'Easy browsing by fabric and colour', 'Smooth shopping experience on every device'],
     live: '', code: '',
-    shots: ['assets/img/gamila-hero.jpg']
+    shots: ['assets/img/gamila-hero.webp']
   },
   {
     slug: 'wanderly-travel', cat: 'landing', color: 'c1', icon: 'bi-globe-americas',
-    cover: 'assets/img/wanderly-desktop.jpg',
+    cover: 'assets/img/wanderly-desktop.webp',
     tag: 'Landing page', title: 'Wanderly — Travel & Tours',
     summary: 'An immersive travel agency website with a full-screen hero, destination cards, trip packages, stories and a glassy floating navigation.',
     role: 'Design & Front-End Development', year: '2025', duration: '4 weeks',
@@ -318,11 +318,11 @@ window.PROJECTS = [
     ],
     results: ['A hero that sells the experience instantly', 'A clear journey from inspiration to booking', 'Consistent, polished design across a long page'],
     live: '', code: '',
-    shots: ['assets/img/wanderly-desktop.jpg', 'assets/img/wanderly-mobile.jpg', 'assets/img/wanderly-full.jpg']
+    shots: ['assets/img/wanderly-desktop.webp', 'assets/img/wanderly-mobile.webp', 'assets/img/wanderly-full.webp']
   },
   {
     slug: 'aegis-logistics', cat: 'landing', color: 'c5', icon: 'bi-truck',
-    cover: 'assets/img/aegis-hero.jpg',
+    cover: 'assets/img/aegis-hero.webp',
     tag: 'Landing page', title: 'Aegis Logistics — Global Freight',
     summary: 'A clean, trustworthy website for a global freight company, with a bold headline, service overview, network map, leadership team, news and a quote request form.',
     role: 'Design & Front-End Development', year: '2026', duration: '4 weeks',
@@ -336,6 +336,9 @@ window.PROJECTS = [
     ],
     results: ['Trust built within seconds of landing', 'Services and credentials easy to scan', 'A clear path to request a quote'],
     live: '', code: '',
-    shots: ['assets/img/aegis-hero.jpg', 'assets/img/aegis-mobile.jpg', 'assets/img/aegis-full.jpg']
+    shots: ['assets/img/aegis-hero.webp', 'assets/img/aegis-mobile.webp', 'assets/img/aegis-full.webp']
   }
 ];
+
+/* Image sizes (width, height) so the browser can reserve space before images load. Generated by the image optimiser. */
+window.IMG_DIMS = {"assets/img/wayfarer-santorini.webp":[1600,1000],"assets/img/wayfarer-maldives.webp":[1600,1000],"assets/img/wayfarer-bali.webp":[1600,1000],"assets/img/wayfarer-lapland.webp":[1600,1000],"assets/img/wayfarer-full.webp":[1000,7524],"assets/img/formwood-hero.webp":[1600,924],"assets/img/formwood-departments.webp":[1600,1000],"assets/img/formwood-drop.webp":[1600,1000],"assets/img/formwood-lookbook.webp":[1600,1000],"assets/img/formwood-bundle.webp":[1600,1000],"assets/img/formwood-philosophy.webp":[1600,967],"assets/img/formwood-reviews.webp":[1600,906],"assets/img/formwood-mockup.webp":[1600,1000],"assets/img/florista-hero1.webp":[1500,1125],"assets/img/florista-hero2.webp":[1500,1125],"assets/img/florista-mobile.webp":[640,1385],"assets/img/florista-full.webp":[1000,6917],"assets/img/ravenmoor-hero.webp":[1600,1000],"assets/img/ravenmoor-matches.webp":[1600,1000],"assets/img/ravenmoor-news.webp":[1600,1000],"assets/img/ravenmoor-about.webp":[1600,1000],"assets/img/ravenmoor-mobile.webp":[640,1385],"assets/img/ravenmoor-full.webp":[1000,5536],"assets/img/bagista-hero.webp":[1600,1000],"assets/img/bagista-full.webp":[1000,6205],"assets/img/emilyjane-cover.webp":[1600,787],"assets/img/emilyjane-hero.webp":[1600,668],"assets/img/emilyjane-library.webp":[1600,1467],"assets/img/emilyjane-contact.webp":[1600,1009],"assets/img/emilyjane-modal.webp":[1600,1000],"assets/img/emilyjane-responsive.webp":[1600,840],"assets/img/emilyjane-mobile.webp":[640,1385],"assets/img/emilyjane-full.webp":[1000,6850],"assets/img/healthcare-home.webp":[1600,1000],"assets/img/healthcare-services.webp":[1600,1000],"assets/img/healthcare-team.webp":[1600,1000],"assets/img/healthcare-mobile.webp":[640,1385],"assets/img/healthcare-full.webp":[1000,6472],"assets/img/littlestage-home.webp":[1600,1000],"assets/img/littlestage-about.webp":[1600,656],"assets/img/littlestage-approach.webp":[1600,600],"assets/img/littlestage-parents.webp":[1600,1131],"assets/img/littlestage-mobile.webp":[640,1385],"assets/img/littlestage-full.webp":[1000,3877],"assets/img/dolce-rose-desktop.webp":[1600,822],"assets/img/dolce-rose-mobile.webp":[640,1385],"assets/img/dolce-rose-full.webp":[1100,3903],"assets/img/mrl-hero.webp":[1600,1000],"assets/img/enola-home.webp":[1600,1000],"assets/img/enola-slide.webp":[1600,1000],"assets/img/enola-pieces.webp":[1600,1175],"assets/img/enola-mobile.webp":[640,1385],"assets/img/enola-full.webp":[1000,4274],"assets/img/kido-hero.webp":[1600,1000],"assets/img/kido-full.webp":[1000,5806],"assets/img/petrocore-home.webp":[1600,1000],"assets/img/petrocore-services.webp":[1600,1000],"assets/img/petrocore-projects.webp":[1600,1000],"assets/img/petrocore-mobile.webp":[640,1385],"assets/img/petrocore-full.webp":[1000,6183],"assets/img/washhouse-hero.webp":[1600,1000],"assets/img/kidoro-home.webp":[1600,1000],"assets/img/kidoro-about.webp":[1600,1000],"assets/img/kidoro-programs.webp":[1600,1000],"assets/img/kidoro-events.webp":[1600,1000],"assets/img/kidoro-gallery.webp":[1600,1000],"assets/img/kidoro-contact.webp":[1600,1000],"assets/img/kidoro-nav.webp":[1400,1167],"assets/img/kidoro-full.webp":[1000,6551],"assets/img/gamila-hero.webp":[1600,900],"assets/img/wanderly-desktop.webp":[1600,1000],"assets/img/wanderly-mobile.webp":[640,1385],"assets/img/wanderly-full.webp":[1000,5824],"assets/img/aegis-hero.webp":[1600,1000],"assets/img/aegis-mobile.webp":[640,1385],"assets/img/aegis-full.webp":[1000,6535]};

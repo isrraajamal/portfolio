@@ -38,6 +38,9 @@
   var imgs = p.shots || [];
   var dots = '<div class="bar"><i></i><i></i><i></i></div>';
 
+  // width/height from the optimiser's size table, so the page never jumps while images load
+  function sz(u) { var d = (window.IMG_DIMS || {})[u]; return d ? ' width="' + d[0] + '" height="' + d[1] + '"' : ''; }
+
   function alt(n) { return esc(p.title) + ' screenshot ' + n; }
 
   if (!imgs.length) {
@@ -52,17 +55,17 @@
 
     desk.forEach(function (u, i) {
       var cls = desk.length === 1 ? 'col-lg-10' : (i === 0 && desk.length % 2 === 1 ? 'col-12' : 'col-md-6');
-      shots += '<div class="' + cls + ' reveal"><a class="browser" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open screenshot full size">' + dots + '<img src="' + esc(u) + '" alt="' + alt(i + 1) + '" loading="lazy"></a></div>';
+      shots += '<div class="' + cls + ' reveal"><a class="browser" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open screenshot full size">' + dots + '<img src="' + esc(u) + '"' + sz(u) + ' alt="' + alt(i + 1) + '" loading="lazy" decoding="async"></a></div>';
     });
 
     mobile.forEach(function (u) {
-      shots += '<div class="' + (full.length ? 'col-lg-4' : 'col-lg-4') + ' reveal"><a class="phone" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open mobile screenshot full size"><img src="' + esc(u) + '" alt="' + esc(p.title) + ' mobile view" loading="lazy"></a></div>';
+      shots += '<div class="' + (full.length ? 'col-lg-4' : 'col-lg-4') + ' reveal"><a class="phone" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open mobile screenshot full size"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' mobile view" loading="lazy" decoding="async"></a></div>';
     });
 
     full.forEach(function (u) {
       shots += '<div class="' + (mobile.length ? 'col-lg-8' : 'col-lg-10') + ' reveal"><figure class="browser scroller">' +
         '<div class="bar"><i></i><i></i><i></i><span><i class="bi bi-mouse"></i> Scroll to explore the full page</span></div>' +
-        '<div class="scroll-area" tabindex="0"><img src="' + esc(u) + '" alt="' + esc(p.title) + ' full page" loading="lazy"></div></figure></div>';
+        '<div class="scroll-area" tabindex="0"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' full page" loading="lazy" decoding="async"></div></figure></div>';
     });
   }
 
@@ -82,7 +85,7 @@
           (buttons ? '<div class="d-flex flex-wrap gap-3">' + buttons + '</div>' : '') +
         '</div>' +
         '<div class="col-lg-6 reveal" style="--d:.12s"><div class="case-visual ' + p.color + (p.cover ? ' has-shot' : '') + '">' +
-          (p.cover ? '<img src="' + esc(p.cover) + '" alt="' + esc(p.title) + ' preview">' : '<i class="bi ' + p.icon + '"></i><div class="mock"><span></span><span></span><span></span></div>') + '</div></div>' +
+          (p.cover ? '<img src="' + esc(p.cover) + '"' + sz(p.cover) + ' alt="' + esc(p.title) + ' preview" fetchpriority="high" decoding="async">' : '<i class="bi ' + p.icon + '"></i><div class="mock"><span></span><span></span><span></span></div>') + '</div></div>' +
       '</div>' +
     '</div></section>' +
 
