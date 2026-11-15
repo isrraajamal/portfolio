@@ -266,6 +266,25 @@ window.PROJECTS = [
     shots: ['assets/img/washhouse-hero.jpg']
   },
   {
+    slug: 'kidoro-academy', cat: 'landing', color: 'c1', icon: 'bi-palette',
+    cover: 'assets/img/kidoro-home.jpg',
+    tag: 'Multi-page website', title: 'Kidoro — Creative Kids Academy',
+    summary: 'A playful, colourful multi-page website for a children’s art academy, with programs, events, a student gallery and a free-trial booking form.',
+    role: 'Design & Front-End Development', year: '2026', duration: '5 weeks',
+    tools: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'Swiper'],
+    challenge: 'An art academy for children aged 3 to 6 needed a website that feels joyful and creative for kids, yet clear and trustworthy for the parents who choose the programs.',
+    approach: [
+      'Built a bold identity from lime, lavender, pink and sunshine yellow, pairing a heavy sans-serif with an italic serif accent in every headline, with floating organic shapes and a rotating circular badge.',
+      'Opened the home page with a large headline, an animated video thumbnail, hashtag stickers on a curved line and three colourful program cards, followed by a scrolling ticker, a trust story with statistics and a how-it-works section.',
+      'Created five consistent inner pages, each with its own coloured header and breadcrumb: About with a story, values and a growth timeline, Programs with a comparison table and class breakdowns, Events with a featured date and filters, a filterable Student showcase gallery and Contact with a map.',
+      'Added parent-friendly details: age badges, a typical class in four steps, a free-trial booking form with custom dropdowns, FAQ accordions and a newsletter sign-up.',
+      'Designed a numbered slide-out menu for phones and made every page stack cleanly on small screens.'
+    ],
+    results: ['A joyful, memorable brand for kids and parents', 'Programs, events and the studio easy to explore', 'A clear path to booking a free trial'],
+    live: '', code: '',
+    shots: ['assets/img/kidoro-about.jpg', 'assets/img/kidoro-programs.jpg', 'assets/img/kidoro-events.jpg', 'assets/img/kidoro-gallery.jpg', 'assets/img/kidoro-contact.jpg', 'assets/img/kidoro-nav.jpg', 'assets/img/kidoro-full.jpg']
+  },
+  {
     slug: 'gamila-hijab', cat: 'shop', color: 'c2', icon: 'bi-bag-heart',
     cover: 'assets/img/gamila-hero.jpg',
     tag: 'E-commerce', title: 'Gamila — Hijab Boutique',
