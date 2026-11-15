@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#5E1A1A"/>
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="#D8A94B" stroke-width="1.5" opacity=".7"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#FFF6E3">IG</text>
+  <circle cx="50" cy="15" r="4" fill="#BCD4EE"/>
+</svg>
