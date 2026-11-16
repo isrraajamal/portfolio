@@ -714,3 +714,8 @@ a.browser:hover{transform:translateY(-6px);box-shadow:0 26px 50px -20px rgba(94,
   .hero-visual .arch{width:100%}
   .hero-visual .float-card{position:static;animation:none;inset:auto;margin:0;font-size:.78rem;padding:.5rem .85rem}
 }
+
+/* Info cards: one consistent layout on every screen, in a row centred under the photo */
+.hero-visual{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.hero-visual .arch{width:100%;margin-bottom:-1rem}
+.hero-visual .float-card{position:static;animation:none;inset:auto;margin:0;font-size:.8rem;padding:.55rem .95rem}
