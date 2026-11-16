@@ -672,3 +672,45 @@ a.browser:hover{transform:translateY(-6px);box-shadow:0 26px 50px -20px rgba(94,
 
 /* The portrait stays perfectly still (no floating) */
 .arch,.arch .avatar,.arch .avatar img{animation:none!important;transform:none!important}
+
+/* Small screens: the three info cards move below the photo so nothing covers the face */
+@media(max-width:767.98px){
+  .hero-visual{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;max-width:380px}
+  .hero-visual .arch{width:100%}
+  .hero-visual .float-card{position:static;animation:none;inset:auto;margin:0;font-size:.78rem;padding:.5rem .85rem}
+  .hero-visual .sparkle{display:none}
+}
+
+/* Where the hero photo stacks directly above About, don't repeat the same picture */
+@media(max-width:991.98px){
+  .about-photo{display:none}
+}
+
+/* ===== Hero refinement ===== */
+.hero-visual{max-width:540px}
+/* sticker-style cut-out: thin white outline + tight, crisp shadow (no haze) */
+.arch .avatar img{
+  filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
+         drop-shadow(0 14px 14px rgba(94,26,26,.22));
+  -webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent 100%);
+          mask-image:linear-gradient(to bottom,#000 88%,transparent 100%);
+}
+.fc-code{top:14%;left:-12%}
+.fc-resp{bottom:10%;left:-8%}
+/* cleaner background circle */
+.hero::before{background:radial-gradient(circle at 30% 30%,#dce9f8,#bcd4ee);opacity:.8;width:400px;height:400px;right:-110px;top:-110px;filter:none}
+.hero::after{filter:none}
+/* thin gold underline instead of a heavy blue block */
+.hl::after{height:.09em;bottom:.02em;background:var(--gold);border-radius:6px}
+
+/* Info cards: floating beside the photo only on wide screens (1400px+); below that they sit in a row under it,
+   because the photo shrinks with its column and a fixed position would touch the scarf or the headline */
+@media(min-width:1400px){
+  .fc-code{left:-20%;top:12%}
+  .fc-resp{left:-8%;bottom:8%}
+}
+@media(min-width:768px) and (max-width:1399.98px){
+  .hero-visual{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+  .hero-visual .arch{width:100%}
+  .hero-visual .float-card{position:static;animation:none;inset:auto;margin:0;font-size:.78rem;padding:.5rem .85rem}
+}
