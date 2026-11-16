@@ -719,3 +719,13 @@ a.browser:hover{transform:translateY(-6px);box-shadow:0 26px 50px -20px rgba(94,
 .hero-visual{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
 .hero-visual .arch{width:100%;margin-bottom:-1rem}
 .hero-visual .float-card{position:static;animation:none;inset:auto;margin:0;font-size:.8rem;padding:.55rem .95rem}
+
+/* Small screens: the two hero buttons always stay side by side */
+@media(max-width:575.98px){
+  .hero-actions{flex-wrap:nowrap!important;gap:.5rem!important}
+  .hero-actions .btn{flex:1 1 0;min-width:0;white-space:nowrap;padding:.75rem .5rem;font-size:.92rem}
+}
+@media(max-width:359.98px){
+  .hero-actions .btn{font-size:.82rem;padding:.7rem .35rem}
+  .hero-actions .btn i{display:none}
+}
