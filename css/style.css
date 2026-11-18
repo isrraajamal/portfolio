@@ -779,3 +779,117 @@ a.browser:hover{transform:translateY(-6px);box-shadow:0 26px 50px -20px rgba(94,
 .stack-list{display:flex;flex-wrap:wrap;gap:.4rem}
 .stack-list li{padding:.3rem .6rem;font-size:.76rem;gap:.35rem}
 .stack-list li i{font-size:.9rem}
+
+/* =========================================================
+   Compact gallery: filter tabs + equal-size grids (projects with many screenshots)
+   ========================================================= */
+.gal-tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
+.gal-tab{border:2px solid var(--maroon);background:var(--cream);color:var(--maroon);font-weight:500;font-size:.9rem;padding:.45rem 1.2rem;border-radius:50px;transition:background .25s,color .25s}
+.gal-tab b{font-weight:600;background:rgba(94,26,26,.12);border-radius:20px;padding:0 .5rem;margin-left:.3rem;font-size:.78rem}
+.gal-tab:hover{background:#fff}
+.gal-tab.on{background:var(--maroon);color:var(--cream)}
+.gal-tab.on b{background:rgba(255,246,227,.25)}
+.gal-panel{display:none}
+.gal-panel.on{display:block}
+.gal-grid{display:grid;gap:1.2rem;justify-content:center}
+.gal-grid.is-desk{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gal-grid.is-mob{grid-template-columns:repeat(5,minmax(0,1fr));gap:1.1rem}
+.gal-grid.is-full{grid-template-columns:minmax(0,820px)}
+.g-card{position:relative;display:block;min-width:0;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s}
+.g-card.is-hidden{display:none}
+.g-card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -20px rgba(94,26,26,.55)}
+.g-ph{display:block;overflow:hidden;position:relative}
+.g-ph img{display:block;width:100%;height:100%}
+.g-zoom{position:absolute;top:44px;right:12px;width:36px;height:36px;border-radius:50%;background:var(--cream);color:var(--maroon);display:grid;place-items:center;font-size:.85rem;opacity:0;transform:scale(.8);transition:opacity .25s,transform .25s;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.g-card:hover .g-zoom,.g-card:focus-visible .g-zoom{opacity:1;transform:none}
+/* desktop: every screenshot shown whole, in a frame of the same size */
+.g-desk{background:#fff}
+.g-desk .bar{background:#f1e8d6}
+.g-desk .g-ph{aspect-ratio:16/10;background:#f8f1e3}
+.g-desk .g-ph img{object-fit:contain;object-position:center}
+/* mobile: phone frames, same size for every phone */
+.g-phone{padding:8px;background:#1c1010;border-radius:30px}
+.g-phone .g-ph{aspect-ratio:9/19;border-radius:23px;background:#f8f1e3}
+.g-phone .g-ph img{object-fit:cover;object-position:top}
+.g-phone .g-zoom{top:18px;right:18px}
+/* full page: fixed window that glides down the whole page on hover */
+.g-fullpage{background:#fff}
+.g-fullpage .bar{background:#f1e8d6}
+.g-fullpage .g-ph{height:clamp(340px,52vw,560px)}
+.g-fullpage .g-ph{overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none}
+.g-fullpage .g-ph::-webkit-scrollbar{display:none;width:0;height:0}
+.g-fullpage .g-ph img{height:auto;transform:none;transition:none}
+.g-fullpage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(transparent,rgba(255,255,255,.95));pointer-events:none;border-radius:0 0 16px 16px;transition:opacity .4s}
+.g-fullpage:hover::after{opacity:0}
+.g-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:var(--maroon);color:var(--cream);font-size:.78rem;font-weight:500;padding:.4rem 1rem;border-radius:50px;white-space:nowrap;box-shadow:0 8px 18px rgba(0,0,0,.3);transition:opacity .3s}
+.g-fullpage:hover .g-hint{opacity:0}
+@media(hover:none){.g-hint{opacity:1!important}}
+.gal-more-wrap{text-align:center;margin-top:1.8rem}
+.gal-more-wrap[hidden]{display:none}
+.gal-more{border:2px solid var(--maroon);background:var(--maroon);color:var(--cream);font-weight:500;padding:.6rem 1.7rem;border-radius:50px;transition:background .25s,color .25s,transform .25s}
+.gal-more b{font-weight:400;opacity:.8;margin-left:.3rem}
+.gal-more:hover{background:var(--cream);color:var(--maroon);transform:translateY(-2px)}
+@media(max-width:991px){.gal-grid.is-desk{grid-template-columns:repeat(2,minmax(0,1fr))}.gal-grid.is-mob{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:575px){.gal-grid.is-desk{grid-template-columns:minmax(0,1fr)}.gal-grid.is-mob{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}}
+
+/* Viewer: tall (full page) images scroll inside the overlay */
+.lb.tall{align-items:flex-start;overflow-y:auto;padding-top:4.5rem;padding-bottom:3rem}
+.lb.tall>img{max-height:none;width:min(1000px,94vw);height:auto;margin:0 auto}
+
+
+/* Desktop tab: same presentation as the other projects (browser frames, two per row, whole screenshots) */
+.gal-grid.is-desk{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.g-desk .g-ph{aspect-ratio:auto;background:#fff}
+.g-desk .g-ph img{height:auto;object-fit:initial}
+.g-desk .g-zoom{display:none}
+@media(max-width:767px){.gal-grid.is-desk{grid-template-columns:minmax(0,1fr)}}
+
+/* Desktop grid: tight two-column stack (row-span masonry, no gaps) */
+.gal-grid.is-desk{gap:1.2rem;align-items:start}
+.gal-grid.is-masonry{grid-auto-rows:4px;gap:0 1.2rem}
+.gal-grid.is-desk .g-card{align-self:start}
+
+/* Mobile tab: whole screenshot in the phone frame, tight stacked layout */
+.gal-grid.is-mob{gap:1.1rem;align-items:start}
+.gal-grid.is-mob.is-masonry{gap:0 1.1rem}
+.gal-grid.is-mob .g-card{align-self:start}
+.g-phone .g-ph{aspect-ratio:auto}
+.g-phone .g-ph img{height:auto;object-fit:initial}
+
+/* Mobile tab v3: equal phone frames, scroll inside each one (hidden scrollbar) */
+.gal-grid.is-mob{gap:1.1rem;align-items:start}
+.gal-grid.is-mob .g-card{align-self:start}
+.g-phone .g-ph{aspect-ratio:9/19;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;background:#f8f1e3}
+.g-phone .g-ph::-webkit-scrollbar{display:none;width:0;height:0}
+.g-phone .g-ph img{height:auto;object-fit:initial;display:block;width:100%}
+.gal-tip{text-align:center;color:var(--maroon);font-size:.85rem;margin:-.4rem 0 1.2rem}
+.gal-tip i{margin-right:.35rem}
+
+/* =========================================================
+   Gallery v4: calm panel, equal-height cards, tall screenshots scroll inside
+   ========================================================= */
+.gal{background:var(--cream);border-radius:28px;padding:1.8rem 1.6rem 2.1rem;box-shadow:var(--shadow)}
+.gal-tabs{margin-bottom:1.5rem}
+.gal-grid.is-desk{gap:1.3rem;align-items:stretch}
+.gal-grid.is-desk .g-card{align-self:stretch}
+.g-desk{background:#fff;border:1px solid rgba(94,26,26,.08)}
+.g-desk .bar{position:relative}
+.g-num{margin-left:auto;font-size:.7rem;letter-spacing:.08em;color:var(--muted);font-variant-numeric:tabular-nums}
+.g-desk .g-ph{aspect-ratio:16/10;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;background:#f8f1e3}
+.g-desk .g-ph::-webkit-scrollbar{display:none;width:0;height:0}
+.g-desk .g-ph img{display:block;width:100%;height:auto;object-fit:initial}
+/* cue on screenshots that are taller than the frame */
+.g-card.is-tall::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;background:linear-gradient(transparent,rgba(255,255,255,.92));pointer-events:none;transition:opacity .35s}
+.g-phone.is-tall::after{left:8px;right:8px;bottom:8px;border-radius:0 0 23px 23px;background:linear-gradient(transparent,rgba(248,241,227,.95))}
+.g-card.is-tall::before{content:"Scroll \2195";position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;background:var(--maroon);color:var(--cream);font-size:.68rem;font-weight:500;letter-spacing:.08em;padding:.28rem .8rem;border-radius:50px;box-shadow:0 6px 14px rgba(0,0,0,.28);pointer-events:none;white-space:nowrap;transition:opacity .35s}
+.g-phone.is-tall::before{bottom:20px}
+.g-card.is-tall:hover::before,.g-card.is-tall:hover::after{opacity:0}
+@media(hover:none){.g-card.is-tall:hover::before{opacity:1}}
+.g-desk .bar .g-num{display:inline-block;width:auto!important;height:auto;background:none;border-radius:0;transition:none;margin-left:auto;color:var(--muted);font-size:.7rem}
+.g-desk .bar,.g-fullpage .bar{display:flex;align-items:center;gap:6px;padding:.6rem .9rem}
+.g-desk .bar i,.g-fullpage .bar i{display:block;width:10px;height:10px;border-radius:50%;background:#e0b9b0}
+.g-desk .bar i:nth-child(2),.g-fullpage .bar i:nth-child(2){background:#e9d089}
+.g-desk .bar i:nth-child(3),.g-fullpage .bar i:nth-child(3){background:#a9c9a0}
+.g-desk .bar,.g-fullpage .bar{height:auto;margin-top:0;overflow:visible;border-radius:0}
+/* No panel behind the gallery: cards sit directly on the section background */
+.gal{background:none;box-shadow:none;padding:0;border-radius:0}

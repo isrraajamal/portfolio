@@ -53,20 +53,41 @@
     var full = imgs.filter(function (u) { return /full/i.test(u); });
     var desk = imgs.filter(function (u) { return !/mobile|full/i.test(u); });
 
-    desk.forEach(function (u, i) {
-      var cls = desk.length === 1 ? 'col-lg-10' : (i === 0 && desk.length % 2 === 1 ? 'col-12' : 'col-md-6');
-      shots += '<div class="' + cls + ' reveal"><a class="browser" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open screenshot full size">' + dots + '<img src="' + esc(u) + '"' + sz(u) + ' alt="' + alt(i + 1) + '" loading="lazy" decoding="async"></a></div>';
-    });
+    if (imgs.length > 8) {
+      // Compact mode for big projects: one tab per screenshot type, each a strip of equal-size cards
+      var zoom = '<span class="g-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>';
+      var groups = [];
+      if (desk.length) groups.push({ k: 'desk', label: 'Desktop', n: desk.length, items: desk.map(function (u, i) {
+        return '<a class="g-card g-desk" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open desktop screenshot ' + (i + 1) + ' of ' + desk.length + '">' + dots + '<span class="g-ph"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + alt(i + 1) + '" loading="lazy" decoding="async"></span>' + zoom + '</a>'; }).join('') });
+      if (mobile.length) groups.push({ k: 'mob', label: 'Mobile', n: mobile.length, items: mobile.map(function (u, i) {
+        return '<a class="g-card g-phone" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open mobile screenshot ' + (i + 1) + ' of ' + mobile.length + '"><span class="g-ph"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' mobile view ' + (i + 1) + '" loading="lazy" decoding="async"></span>' + zoom + '</a>'; }).join('') });
+      if (full.length) groups.push({ k: 'full', label: 'Full page', n: 0, items: full.map(function (u) {
+        return '<a class="g-card g-fullpage" data-tall="1" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open the full page">' + dots + '<span class="g-ph"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' full page" loading="lazy" decoding="async"></span><span class="g-hint"><i class="bi bi-mouse"></i> Scroll or hover to explore · click to open</span></a>'; }).join('') });
+      // Full page first, so it is the default tab
+      var fi = groups.map(function (g) { return g.k; }).indexOf('full');
+      if (fi > 0) groups.unshift(groups.splice(fi, 1)[0]);
+      var cfg = { desk: { cls: 'is-desk', init: 6, step: 6 }, mob: { cls: 'is-mob', init: 5, step: 10 }, full: { cls: 'is-full', init: 99, step: 0 } };
+      shots = '<div class="col-12 reveal"><div class="gal" data-gal><div class="gal-tabs" role="tablist" aria-label="Screenshot types">' +
+        groups.map(function (g, i) { return '<button type="button" role="tab" class="gal-tab' + (i ? '' : ' on') + '" data-panel="' + g.k + '" aria-selected="' + (i ? 'false' : 'true') + '">' + g.label + (g.n ? ' <b>' + g.n + '</b>' : '') + '</button>'; }).join('') +
+        '</div>' +
+        groups.map(function (g, i) { var c = cfg[g.k]; return '<div class="gal-panel' + (i ? '' : ' on') + '" data-panel="' + g.k + '" data-init="' + c.init + '" data-step="' + c.step + '">' + (g.k === 'mob' ? '<p class="gal-tip"><i class="bi bi-mouse"></i> Scroll inside a phone to see the whole screen · click to enlarge</p>' : '') + '<div class="gal-grid ' + c.cls + '">' + g.items + '</div>' + (c.step ? '<div class="gal-more-wrap"><button type="button" class="gal-more">Show more <b></b></button></div>' : '') + '</div>'; }).join('') +
+        '</div></div>';
+    } else {
+      desk.forEach(function (u, i) {
+        var cls = desk.length === 1 ? 'col-lg-10' : (i === 0 && desk.length % 2 === 1 ? 'col-12' : 'col-md-6');
+        shots += '<div class="' + cls + ' reveal"><a class="browser" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open screenshot full size">' + dots + '<img src="' + esc(u) + '"' + sz(u) + ' alt="' + alt(i + 1) + '" loading="lazy" decoding="async"></a></div>';
+      });
 
-    mobile.forEach(function (u) {
-      shots += '<div class="' + (full.length ? 'col-lg-4' : 'col-lg-4') + ' reveal"><a class="phone" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open mobile screenshot full size"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' mobile view" loading="lazy" decoding="async"></a></div>';
-    });
+      mobile.forEach(function (u) {
+        shots += '<div class="' + (full.length ? 'col-lg-4' : 'col-lg-4') + ' reveal"><a class="phone" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Open mobile screenshot full size"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' mobile view" loading="lazy" decoding="async"></a></div>';
+      });
 
-    full.forEach(function (u) {
-      shots += '<div class="' + (mobile.length ? 'col-lg-8' : 'col-lg-10') + ' reveal"><figure class="browser scroller">' +
-        '<div class="bar"><i></i><i></i><i></i><span><i class="bi bi-mouse"></i> Scroll to explore the full page</span></div>' +
-        '<div class="scroll-area" tabindex="0"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' full page" loading="lazy" decoding="async"></div></figure></div>';
-    });
+      full.forEach(function (u) {
+        shots += '<div class="' + (mobile.length ? 'col-lg-8' : 'col-lg-10') + ' reveal"><figure class="browser scroller">' +
+          '<div class="bar"><i></i><i></i><i></i><span><i class="bi bi-mouse"></i> Scroll to explore the full page</span></div>' +
+          '<div class="scroll-area" tabindex="0"><img src="' + esc(u) + '"' + sz(u) + ' alt="' + esc(p.title) + ' full page" loading="lazy" decoding="async"></div></figure></div>';
+      });
+    }
   }
 
   var buttons = '';
@@ -142,13 +163,107 @@
     els.forEach(function (el) { el.classList.add('in-view'); });
   }
 
+  /* ----- Gallery tabs + sliders (large projects) ----- */
+  function setShift(card) {
+    var frame = card.querySelector('.g-ph'), im = card.querySelector('img');
+    if (!frame || !im || !frame.clientHeight || !im.clientHeight) return;
+    var shift = Math.max(0, im.clientHeight - frame.clientHeight);
+    card.style.setProperty('--shift', shift);
+    card.style.setProperty('--dur', Math.min(Math.max(shift * 5, 4000), 22000) + 'ms');
+  }
+  // Equal-size cards: mark the ones whose screenshot is taller than the frame (they scroll inside it)
+  function markTall() {
+    Array.prototype.slice.call(root.querySelectorAll('.g-desk, .g-phone')).forEach(function (card) {
+      var ph = card.querySelector('.g-ph');
+      if (!ph || !ph.clientHeight) return;                           // hidden tab
+      card.classList.toggle('is-tall', ph.scrollHeight > ph.clientHeight + 4);
+    });
+  }
+  var tallTimer = 0;
+  function markTallSoon() { clearTimeout(tallTimer); tallTimer = setTimeout(markTall, 60); }
+  window.addEventListener('resize', markTallSoon);
+  window.addEventListener('load', markTallSoon);
+  if (window.ResizeObserver) {
+    var tallRO = new ResizeObserver(markTallSoon);
+    Array.prototype.slice.call(root.querySelectorAll('.g-desk img, .g-phone img')).forEach(function (im) { tallRO.observe(im); });
+  }
+  // little "01 / 27" counter in each browser bar
+  (function () {
+    var cards = Array.prototype.slice.call(root.querySelectorAll('.g-desk'));
+    cards.forEach(function (card, i) {
+      var bar = card.querySelector('.bar'); if (!bar) return;
+      var s = document.createElement('span'); s.className = 'g-num';
+      s.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + cards.length;
+      bar.appendChild(s);
+    });
+  })();
+  markTallSoon();
+
+  function refreshShifts() { Array.prototype.slice.call(root.querySelectorAll('.g-fullpage')).forEach(setShift); }
+  Array.prototype.slice.call(root.querySelectorAll('.g-fullpage img')).forEach(function (im) {
+    if (im.complete) setShift(im.closest('.g-fullpage')); else im.addEventListener('load', function () { setShift(im.closest('.g-fullpage')); });
+  });
+
+  // Full-page window: scroll it with wheel / touch / drag-free swipe, or let it glide on hover until you take over
+  Array.prototype.slice.call(root.querySelectorAll('.g-fullpage')).forEach(function (card) {
+    var ph = card.querySelector('.g-ph'), raf = 0, last = 0, manual = false, gliding = false;
+    function stop() { gliding = false; cancelAnimationFrame(raf); }
+    function step(t) {
+      if (!gliding) return;
+      var max = ph.scrollHeight - ph.clientHeight;
+      var speed = Math.max(70, max / 24);                         // px per second, whole page in about 24 s
+      ph.scrollTop = Math.min(max, ph.scrollTop + (last ? (t - last) / 1000 * speed : 0));
+      last = t;
+      if (ph.scrollTop >= max) stop(); else raf = requestAnimationFrame(step);
+    }
+    card.addEventListener('mouseenter', function () {
+      if (!window.matchMedia('(hover:hover)').matches) return;
+      manual = false; gliding = true; last = 0; raf = requestAnimationFrame(step);
+    });
+    card.addEventListener('mouseleave', function () {
+      stop();
+      if (!manual) ph.scrollTo({ top: 0, behavior: 'smooth' });  // glide back only if you did not scroll yourself
+    });
+    ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(function (ev) {
+      ph.addEventListener(ev, function () { manual = true; stop(); }, { passive: true });
+    });
+  });
+  window.addEventListener('resize', refreshShifts);
+
+  Array.prototype.slice.call(root.querySelectorAll('[data-gal]')).forEach(function (g) {
+    var tabs = Array.prototype.slice.call(g.querySelectorAll('.gal-tab')), panels = Array.prototype.slice.call(g.querySelectorAll('.gal-panel'));
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        tabs.forEach(function (x) { x.classList.toggle('on', x === t); x.setAttribute('aria-selected', x === t); });
+        panels.forEach(function (pn) { pn.classList.toggle('on', pn.getAttribute('data-panel') === t.getAttribute('data-panel')); });
+        refreshShifts();
+        markTallSoon();
+      });
+    });
+    // Show the first few cards, reveal more on demand
+    panels.forEach(function (pn) {
+      var btn = pn.querySelector('.gal-more'); if (!btn) return;
+      var cards = Array.prototype.slice.call(pn.querySelectorAll('.g-card'));
+      var shown = +pn.getAttribute('data-init'), step = +pn.getAttribute('data-step');
+      function apply() {
+        cards.forEach(function (c, i) { c.classList.toggle('is-hidden', i >= shown); });
+        var left = cards.length - shown;
+        btn.parentNode.hidden = left <= 0;
+        btn.querySelector('b').textContent = '(' + Math.max(left, 0) + ' more)';
+        markTallSoon();
+      }
+      btn.addEventListener('click', function () { shown += step; apply(); });
+      apply();
+    });
+  });
+
   /* ----- Image viewer (lightbox): X button, click outside, Esc, arrows ----- */
-  var triggers = Array.prototype.slice.call(root.querySelectorAll('.case-visual.has-shot > img, .case-gallery a.browser, .case-gallery a.phone'));
+  var triggers = Array.prototype.slice.call(root.querySelectorAll('.case-visual.has-shot > img, .case-gallery a.browser, .case-gallery a.phone, .case-gallery a.g-card'));
   if (!triggers.length) return;
 
   var items = triggers.map(function (el) {
     var img = el.tagName === 'IMG' ? el : el.querySelector('img');
-    return { src: img.currentSrc || img.src, alt: img.alt || '' };
+    return { src: img.currentSrc || img.src, alt: img.alt || '', tall: el.hasAttribute && el.hasAttribute('data-tall') };
   });
 
   var lb = document.createElement('div');
@@ -172,6 +287,9 @@
     lbImg.src = items[current].src;
     lbImg.alt = items[current].alt;
     lbCount.textContent = (current + 1) + ' / ' + items.length;
+    lb.classList.toggle('tall', !!items[current].tall);
+    lbImg.onload = function () { if (lbImg.naturalWidth && lbImg.naturalHeight / lbImg.naturalWidth > 2.2) lb.classList.add('tall'); lb.scrollTop = 0; };
+    lb.scrollTop = 0;
   }
   function open(i) {
     lastFocus = document.activeElement;
