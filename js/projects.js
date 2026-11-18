@@ -212,6 +212,60 @@ window.PROJECTS = [
     shots: ['assets/img/mrl-hero.webp']
   },
   {
+    slug: 'aurea-bakery', cat: 'landing', color: 'c4', icon: 'bi-basket',
+    cover: 'assets/img/aurea-home.jpg',
+    tag: 'Multi-page website', title: 'Aurea — Bakery Ingredients',
+    summary: 'A warm, playful multi-page website for a bakery ingredients company, with a product catalogue, filters, product detail pages and a request-a-quote contact flow.',
+    role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
+    tools: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'Swiper'],
+    challenge: 'A bakery ingredients supplier needed a website that feels as warm as fresh bread while helping professional bakers browse mixes, compare options and request samples or quotes easily.',
+    approach: [
+      'Built a golden, cream and chocolate palette with a bold serif headline, a hand-drawn underline and an arched hero photo to give the brand an appetising personality.',
+      'Created a filterable product catalogue (clean label, cool rising, dosage, sorting) with colourful product cards, plus a friendly empty state when no mix matches.',
+      'Designed detailed product pages with pack size, dosage, shelf life, storage, tabs for description and usage, a sample request button and related products.',
+      'Added About, Contact and FAQ pages with a timeline, team slider, quote form and opening hours, and a slide-out mobile menu with a Call us button.'
+    ],
+    results: ['A warm, memorable brand feel', 'Easy to filter and compare products', 'Clear path to request a sample or quote'],
+    live: '', code: '',
+    shots: ['assets/img/aurea-home.jpg', 'assets/img/aurea-range.jpg', 'assets/img/aurea-products.jpg', 'assets/img/aurea-product.jpg', 'assets/img/aurea-team.jpg', 'assets/img/aurea-mobile.jpg', 'assets/img/aurea-full.jpg']
+  },
+  {
+    slug: 'coffee-and-co', cat: 'landing', color: 'c4', icon: 'bi-cup-hot',
+    cover: 'assets/img/coffee-cover.jpg',
+    tag: 'Multi-page website', title: 'Coffee & Co — Bakery & Café',
+    summary: 'An elegant multi-page website for a coffee roastery and bakery, with a cinematic hero, a story timeline, gallery, journal, careers and a table reservation flow.',
+    role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
+    tools: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'Swiper'],
+    challenge: 'A small roastery and bakery needed a website that feels as warm and unhurried as the café itself, tells its story well and makes it easy to book a table.',
+    approach: [
+      'Led with a deep olive and gold palette, a large REAL COFFEE hero with the latte as the centrepiece, an Open now badge and a scrolling ticker of the brand values.',
+      'Built a consistent set of inner pages with arched outlines and a scalloped awning edge: About with a ten-year timeline and team, Gallery with filters and a lightbox, Journal, Careers and Contact.',
+      'Added a From bean to cup scroll story with animated cup illustrations, a loading screen, and a reservation form with seating options and opening hours.',
+      'Designed a dedicated mobile experience with a slide-out menu and a bottom bar for Reserve, Call and Map.'
+    ],
+    results: ['A warm, memorable brand atmosphere', 'Every page feels part of one story', 'Reserving a table is quick on any device'],
+    live: '', code: '',
+    shots: ['assets/img/coffee-home.jpg', 'assets/img/coffee-about.jpg', 'assets/img/coffee-gallery.jpg', 'assets/img/coffee-journal.jpg', 'assets/img/coffee-contact.jpg', 'assets/img/coffee-mobile.jpg', 'assets/img/coffee-full.jpg']
+  },
+  {
+    slug: 'scoopsy-ice-cream', cat: 'landing', color: 'c2', icon: 'bi-cup-straw',
+    cover: 'assets/img/scoopsy-home.jpg',
+    tag: 'Multi-page website', title: 'Scoopsy — Ice Cream Shop',
+    summary: 'A playful, retro multi-page website for a home-made ice cream brand, with a checkerboard and wave theme, product carousel, gallery, locations and a story timeline.',
+    role: 'Design & Front-End Development', year: '2026', duration: '6 weeks',
+    tools: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'Swiper'],
+    challenge: 'An ice cream brand needed a website as fun and nostalgic as its products, while still guiding visitors to the menu, the nearest store and the brand story.',
+    approach: [
+      'Built a pink, chocolate and cream palette with chunky retro headlines, wavy backgrounds and a checkerboard edge, plus small ice cream stickers for personality.',
+      'Designed the home page as a story: hero with an arched photo, product carousel, popular category shapes, how it is made, a collage gallery, reviews and store locations.',
+      'Created inner pages with a shared header and breadcrumb: a filterable Menu, an Our Story page with a timeline, and a Contact page with a form, map and FAQ.',
+      'Added a Join the Scoop Club sign-up in the footer, and adapted every page to mobile with a slide-out menu.'
+    ],
+    results: ['A joyful, memorable brand personality', 'Easy path from craving to store', 'Consistent look across every page'],
+    live: '', code: '',
+    shots: ['assets/img/scoopsy-home.jpg', 'assets/img/scoopsy-products.jpg', 'assets/img/scoopsy-gallery.jpg', 'assets/img/scoopsy-locations.jpg', 'assets/img/scoopsy-about.jpg', 'assets/img/scoopsy-contact.jpg', 'assets/img/scoopsy-mobile.jpg', 'assets/img/scoopsy-full.jpg']
+  },
+  {
     slug: 'verde-studio', cat: 'shop', color: 'c5', icon: 'bi-bag-heart',
     cover: 'assets/img/verde-home.webp',
     tag: 'E-commerce', title: 'VERDE Studio — Sustainable Fashion',
